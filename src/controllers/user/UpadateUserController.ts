@@ -6,9 +6,9 @@ class UpdateUserController {
         const { name, endereco } = request.body;
         const user_id = request.user_id;
 
-        const updateUser = new UpdateUserService();
+        const service = new UpdateUserService();
 
-        const user = await updateUser.execute({ user_id, name, endereco });
+        const user = await service.execute({ user_id, name, endereco });
 
         return response.json(user);
     }

@@ -6,8 +6,8 @@ class CreateHairCutController {
         const { name, price } = request.body;
         const user_id = request.user_id;
 
-        const createHaircutService = new CreateHaircutService();
-        const haircut = await createHaircutService.execute({ user_id, name, price });
+        const service = new CreateHaircutService();
+        const haircut = await service.execute({ user_id, name, price });
 
         return response.json(haircut);
     }

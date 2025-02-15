@@ -6,8 +6,8 @@ class ListHairCutController {
         const user_id = request.user_id;
         const status = request.query.status as string;
 
-        const listHaircuts = new ListHairCutService();
-        const hairCuts = await listHaircuts.execute({ user_id, status });
+        const service = new ListHairCutService();
+        const hairCuts = await service.execute({ user_id, status });
 
         return response.json(hairCuts);
     }
