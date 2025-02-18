@@ -33,7 +33,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          ports: 22
+          port: 22
           script: |
             cd  var/www/barber
             git pull origin main
