@@ -27,7 +27,7 @@ class CreateHaircutService {
             }
         });
 
-        if(myHaircuts >= 3 && user.subscriptions?.status !== "active") {
+        if(myHaircuts >= 3 && user?.subscriptions?.status !== "active") {
             throw new Error("Not authorized.");
         }
 

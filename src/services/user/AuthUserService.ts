@@ -28,7 +28,8 @@ class AuthUserService {
             throw new Error("Email/Password incorrect.");
         }
 
-        const token = sign({ name: user.name, email: user.email }, process.env.JWT_SECRET, { subject: user.id, expiresIn: '30d' });
+        const secret = process.env.JWT_SECRET as string;
+        const token = sign({ name: user.name, email: user.email },  secret, { subject: user.id, expiresIn: '30d' });
         
         return {
             id: user?.id,

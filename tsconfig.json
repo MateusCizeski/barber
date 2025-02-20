@@ -6,10 +6,10 @@
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["jest", "node"],  // Adicione "jest" aqui
+    "types": ["node"],
     "outDir": "./dist",
     "rootDir": "./src"
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts"],  // Inclua os testes aqui
+  "include": ["src/**/*.ts", "src/@types/**/*.d.ts"],
   "exclude": ["node_modules"]
 }

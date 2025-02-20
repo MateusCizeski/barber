@@ -32,7 +32,7 @@ class FinishScheduleService {
             return { message: "Finalizado com sucesso!" }
         }catch(err) {
             console.log(err);
-            throw new Error(err);
+            throw new Error(err instanceof Error ? err.message : String(err));
         }
     }
 }
