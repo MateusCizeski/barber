@@ -19,6 +19,9 @@ import { NewScheduleController } from "./controllers/schedule/NewScheduleControl
 import { ListScheduleController } from "./controllers/schedule/ListScheduleController";
 import { FinishScheduleController } from "./controllers/schedule/FinishScheduleController";
 
+//DEPLOY
+import { DeployController } from "./controllers/deploy/DeployController";
+
 import { isAuthenticated } from "./middlewares/isAuthenticated";
 
 const router = Router();
@@ -42,4 +45,6 @@ router.post('/schedule', isAuthenticated, new NewScheduleController().handle);
 router.get('/schedule', isAuthenticated, new ListScheduleController().handle);
 router.delete('/schedule', isAuthenticated, new FinishScheduleController().handle);
 
+// --- DEPLOY ---
+router.post("/github-webhook", new DeployController().handle);
 export { router };
