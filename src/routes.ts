@@ -47,4 +47,5 @@ router.delete('/schedule', isAuthenticated, new FinishScheduleController().handl
 
 // --- DEPLOY ---
 router.post("/github-webhook", new DeployController().handle);
+
 export { router };
